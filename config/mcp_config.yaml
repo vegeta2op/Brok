@@ -1,0 +1,103 @@
+# MCP Server Configuration
+# Configuration for Model Context Protocol servers
+
+servers:
+  # Playwright MCP Server for browser automation
+  playwright:
+    enabled: true
+    command: "npx"
+    args:
+      - "@modelcontextprotocol/server-playwright"
+    env:
+      # Playwright-specific environment variables
+      PLAYWRIGHT_BROWSERS_PATH: "~/.cache/ms-playwright"
+    timeout: 60000  # 60 seconds
+    description: "Browser automation and web interaction"
+    tools:
+      - "playwright_navigate"
+      - "playwright_click"
+      - "playwright_fill"
+      - "playwright_screenshot"
+      - "playwright_evaluate"
+
+  # Custom Pentesting Tools MCP Server
+  pentest_tools:
+    enabled: true
+    command: "python"
+    args:
+      - "-m"
+      - "backend.mcp_servers.pentest_tools_server"
+    timeout: 120000  # 2 minutes
+    description: "Custom pentesting tools and utilities"
+    tools:
+      - "http_request"
+      - "payload_generator"
+      - "response_analyzer"
+      - "sql_injection_test"
+      - "xss_test"
+      - "csrf_test"
+      - "auth_test"
+      - "port_scan"
+      - "directory_enum"
+
+# MCP client configuration
+client:
+  # Maximum concurrent MCP server connections
+  max_connections: 5
+
+  # Connection timeout (milliseconds)
+  connection_timeout: 30000
+
+  # Request timeout (milliseconds)
+  request_timeout: 60000
+
+  # Retry failed requests
+  retry_failed: true
+  max_retries: 3
+
+  # Logging
+  log_level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  log_requests: true
+  log_responses: false  # Can be verbose
+
+# Tool-specific configurations
+tool_configs:
+  http_request:
+    # Default headers for HTTP requests
+    default_headers:
+      User-Agent: "JimCrow-PenTest-Agent/0.1.0"
+      Accept: "*/*"
+    # Follow redirects
+    follow_redirects: true
+    max_redirects: 5
+    # Verify SSL certificates
+    verify_ssl: true
+    # Timeout per request
+    timeout: 30
+
+  port_scan:
+    # Port scanning settings (use carefully!)
+    enabled: false  # Disabled by default, requires authorization
+    common_ports:
+      - 80
+      - 443
+      - 8080
+      - 8443
+      - 3000
+      - 5000
+    timeout: 5
+    max_concurrent: 10
+
+  directory_enum:
+    # Directory enumeration wordlists
+    wordlists:
+      small: "backend/wordlists/directories_small.txt"
+      medium: "backend/wordlists/directories_medium.txt"
+      large: "backend/wordlists/directories_large.txt"
+    default_wordlist: "small"
+    # Status codes to consider as "found"
+    valid_status_codes:
+      - 200
+      - 301
+      - 302
+      - 403

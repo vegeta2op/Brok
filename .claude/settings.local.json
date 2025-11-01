@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3:*)",
+      "Bash(./venv/bin/python -m cli.main auth add:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

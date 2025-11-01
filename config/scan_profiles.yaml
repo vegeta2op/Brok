@@ -1,0 +1,174 @@
+# Scan Profile Configurations
+# Define different scanning modes with varying levels of aggression and coverage
+
+profiles:
+  # Quick scan - Fast, minimal coverage
+  quick:
+    name: "Quick Scan"
+    description: "Fast reconnaissance and basic vulnerability checks"
+    max_depth: 2
+    max_urls: 50
+    timeout: 15
+    rate_limit: 5
+    modules:
+      - reconnaissance
+      - sql_injection
+      - xss
+    checks:
+      sensitive_files: true
+      security_headers: true
+      sql_injection: true
+      xss: true
+      csrf: false
+      auth_testing: false
+      access_control: false
+    risk_levels:
+      safe: true
+      moderate: true
+      risky: false
+
+  # Normal scan - Balanced coverage and speed
+  normal:
+    name: "Normal Scan"
+    description: "Comprehensive OWASP Top 10 vulnerability scanning"
+    max_depth: 5
+    max_urls: 500
+    timeout: 30
+    rate_limit: 10
+    modules:
+      - reconnaissance
+      - sql_injection
+      - xss
+      - csrf
+      - authentication
+      - access_control
+    checks:
+      sensitive_files: true
+      security_headers: true
+      directory_enum: true
+      sql_injection: true
+      xss: true
+      csrf: true
+      auth_testing: true
+      access_control: true
+      session_management: true
+    risk_levels:
+      safe: true
+      moderate: true
+      risky: false  # Still requires approval
+
+  # Deep scan - Thorough, time-consuming
+  deep:
+    name: "Deep Scan"
+    description: "Exhaustive testing with all modules and payloads"
+    max_depth: 10
+    max_urls: 2000
+    timeout: 60
+    rate_limit: 15
+    modules:
+      - reconnaissance
+      - sql_injection
+      - xss
+      - csrf
+      - authentication
+      - access_control
+      - sensitive_data
+      - known_vulnerabilities
+    checks:
+      sensitive_files: true
+      security_headers: true
+      directory_enum: true
+      subdomain_enum: true
+      sql_injection: true
+      nosql_injection: true
+      command_injection: true
+      xss: true
+      csrf: true
+      auth_testing: true
+      access_control: true
+      session_management: true
+      sensitive_data: true
+      crypto_checks: true
+      cve_checks: true
+    risk_levels:
+      safe: true
+      moderate: true
+      risky: true  # Requires approval
+
+  # Stealth scan - Slow and careful to avoid detection
+  stealth:
+    name: "Stealth Scan"
+    description: "Slow, careful scanning to minimize detection"
+    max_depth: 3
+    max_urls: 200
+    timeout: 45
+    rate_limit: 2  # Very slow
+    delay_between_requests: 5  # seconds
+    modules:
+      - reconnaissance
+      - sql_injection
+      - xss
+    checks:
+      sensitive_files: true
+      security_headers: true
+      sql_injection: true
+      xss: true
+    risk_levels:
+      safe: true
+      moderate: true
+      risky: false
+    user_agent_rotation: true
+    randomize_delays: true
+
+  # Targeted scan - Specific vulnerability focus
+  targeted:
+    name: "Targeted Scan"
+    description: "Focus on specific vulnerability types"
+    max_depth: 5
+    max_urls: 300
+    timeout: 30
+    rate_limit: 10
+    # Modules can be customized via CLI
+    modules: []
+    checks: {}
+    risk_levels:
+      safe: true
+      moderate: true
+      risky: false
+
+# Default profile if none specified
+default_profile: normal
+
+# Module-specific configurations
+module_configs:
+  sql_injection:
+    # Number of payloads to test per injection point
+    payloads_per_point: 10
+    # Test for error-based, blind, and time-based SQLi
+    test_types:
+      - error_based
+      - boolean_blind
+      - time_blind
+
+  xss:
+    # XSS payload complexity
+    payloads_per_point: 8
+    test_types:
+      - reflected
+      - stored
+      - dom_based
+
+  authentication:
+    # Common credentials to test
+    test_default_credentials: true
+    # Brute force settings
+    brute_force_enabled: false  # Risky, requires approval
+    max_attempts: 3
+
+  reconnaissance:
+    # Technology detection
+    detect_technologies: true
+    # Check for sensitive files
+    check_sensitive_files: true
+    # Directory enumeration
+    directory_wordlist_size: small  # small, medium, large

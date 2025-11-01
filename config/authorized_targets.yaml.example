@@ -1,0 +1,25 @@
+# Example authorized targets configuration
+# Copy this file to authorized_targets.yaml and customize
+
+authorized_targets:
+  - domain: "example.com"
+    scope_patterns:
+      - "*example.com*"
+      - "*.example.com/*"
+    excluded_patterns:
+      - "*/logout"
+      - "*/delete*"
+    notes: "Production environment - approved by John Doe on 2024-01-01"
+
+  - domain: "test.internal"
+    scope_patterns:
+      - "*test.internal*"
+    excluded_patterns: []
+    notes: "Internal test environment"
+
+# Global whitelist applies to all scans
+global_whitelist:
+  - "localhost"
+  - "127.0.0.1"
+  - "*.local"
+
