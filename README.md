@@ -2,7 +2,7 @@
 
 **An AI agent that actually THINKS like a penetration tester** - not just another vulnerability scanner.
 
-Brok uses advanced AI (GPT-4, Claude, Gemini) to intelligently analyze, reason about, and test web applications. Watch it think in real-time as it discovers vulnerabilities through creative problem-solving and adaptive strategies.
+Brok uses advanced AI (GPT-5, Claude, Gemini) to intelligently analyze, reason about, and test web applications. Watch it think in real-time as it discovers vulnerabilities through creative problem-solving and adaptive strategies.
 
 ```
 🤖 AI: "I detected PHP + MySQL. Let me craft targeted SQLi payloads..."
@@ -13,9 +13,6 @@ Brok uses advanced AI (GPT-4, Claude, Gemini) to intelligently analyze, reason a
 
 **Think XBow, but open-source and customizable.**
 
----
-
-## 🎬 **New Here? → [START_HERE.md](START_HERE.md)**
 
 ---
 
@@ -33,38 +30,38 @@ Brok uses advanced AI (GPT-4, Claude, Gemini) to intelligently analyze, reason a
 ╚══════════════════════════════════════════════════════════════╝
 ```
 
-## 🚀 Features
+##  Features
 
-### 🧠 **True AI Intelligence** - Not Just Another Scanner!
+###  **True AI Intelligence** - Not Just Another Scanner!
 
 Brok doesn't run scripts - it **THINKS** like a pentester:
 
-- 💡 **Reasons & Explains**: AI analyzes targets and explains WHY it's testing each thing
-- 🎯 **Context-Aware**: Detects tech stack and crafts specific payloads (e.g., MySQL vs PostgreSQL SQLi)
-- 🔄 **Adapts in Real-Time**: Learns from responses and modifies strategy on the fly
-- 🔗 **Chains Techniques**: Intelligently combines multiple attack vectors
-- 🎨 **Creative Problem-Solving**: Finds non-obvious vulnerabilities by thinking creatively
+- **Reasons & Explains**: AI analyzes targets and explains WHY it's testing each thing
+- **Context-Aware**: Detects tech stack and crafts specific payloads (e.g., MySQL vs PostgreSQL SQLi)
+- **Adapts in Real-Time**: Learns from responses and modifies strategy on the fly
+- **Chains Techniques**: Intelligently combines multiple attack vectors
+- **Creative Problem-Solving**: Finds non-obvious vulnerabilities by thinking creatively
 
-### 🔒 **Comprehensive Security Testing**
+### **Comprehensive Security Testing**
 
-- 🎯 **OWASP Top 10 Coverage**: SQLi, XSS, CSRF, Auth, Access Control, and more
-- 🔍 **Intelligent Tools**: AI-driven reconnaissance, adaptive payload generation, smart bypasses
-- 🌐 **MCP Integration**: Playwright browser automation + custom pentesting tools
+-  **OWASP Top 10 Coverage**: SQLi, XSS, CSRF, Auth, Access Control, and more
+-  **Intelligent Tools**: AI-driven reconnaissance, adaptive payload generation, smart bypasses
+-  **MCP Integration**: Playwright browser automation + custom pentesting tools
 
-### 💻 **Beautiful Interfaces**
+###  **Beautiful Interfaces**
 
-- ✨ **Interactive TUI**: Watch the AI think in real-time - see its reasoning, tool usage, and analysis
-- 📊 **Modern Web Dashboard**: React + Tailwind dashboard for monitoring and reporting
-- 🎨 **Rich Terminal Output**: Color-coded, easy-to-read results
+-  **Interactive TUI**: Watch the AI think in real-time - see its reasoning, tool usage, and analysis
+-  **Modern Web Dashboard**: React + Tailwind dashboard for monitoring and reporting
+-  **Rich Terminal Output**: Color-coded, easy-to-read results
 
-### 🛡️ **Safe & Compliant**
+###  **Safe & Compliant**
 
-- 🔒 **Multi-Layer Authorization**: Target validation, whitelisting, and scope enforcement
-- ⚠️ **Risk Approval System**: User confirmation required for risky actions
-- 📝 **Complete Audit Trail**: Detailed logging of all actions and decisions
-- 🧠 **Learning System**: RAG-powered knowledge base learns from past scans
+-  **Multi-Layer Authorization**: Target validation, whitelisting, and scope enforcement
+-  **Risk Approval System**: User confirmation required for risky actions
+-  **Complete Audit Trail**: Detailed logging of all actions and decisions
+-  **Learning System**: RAG-powered knowledge base learns from past scans
 
-## ⚡ Quick Start
+##  Quick Start
 
 ### Prerequisites
 
@@ -115,7 +112,7 @@ cd dashboard && npm install && cd ..
 python -m cli.main tui
 ```
 
-## 🎨 Interactive TUI
+##  Interactive TUI
 
 Launch the beautiful terminal interface:
 
@@ -124,16 +121,16 @@ python -m cli.main tui
 ```
 
 Features:
-- 📊 Real-time scan progress visualization
-- 🔴 Live vulnerability discovery updates
-- 📝 Activity log stream
-- ✅ Interactive approval prompts for risky actions
-- 🎯 Intuitive menu navigation
-- 🚀 Fast and responsive
+-  Real-time scan progress visualization
+-  Live vulnerability discovery updates
+-  Activity log stream
+-  Interactive approval prompts for risky actions
+-  Intuitive menu navigation
+-  Fast and responsive
 
 Perfect for both beginners and advanced users!
 
-## 📟 CLI Usage
+##  CLI Usage
 
 ```bash
 # Start a scan
@@ -158,22 +155,6 @@ python -m cli.main kb search "SQL injection"
 python -m cli.main kb init  # Populate with defaults
 ```
 
-## 🌐 Web Dashboard
-
-Start the full-stack application:
-
-```bash
-# Terminal 1 - Backend API
-python -m backend.api.main
-
-# Terminal 2 - React Dashboard
-cd dashboard && npm run dev
-```
-
-Or use make:
-```bash
-make dev
-```
 
 Access at: **http://localhost:5173**
 
@@ -230,70 +211,70 @@ brok/
 └── knowledge_base/         # Pentesting knowledge
 ```
 
-## 🧪 Testing Capabilities
+##  Testing Capabilities
 
 ### OWASP Top 10 Coverage
 
-1. ✅ **Injection Attacks**
+1.  **Injection Attacks**
    - SQL injection
    - NoSQL injection
    - Command injection
    - LDAP injection
 
-2. ✅ **Broken Authentication**
+2.  **Broken Authentication**
    - Weak credentials
    - Session management
    - Password security
    - MFA bypass
 
-3. ✅ **Sensitive Data Exposure**
+3. **Sensitive Data Exposure**
    - Unencrypted data
    - Weak encryption
    - Information disclosure
    - Exposed config files
 
-4. ✅ **XML External Entities (XXE)**
+4.  **XML External Entities (XXE)**
    - XXE injection
    - XML parsing vulnerabilities
 
-5. ✅ **Broken Access Control**
+5.  **Broken Access Control**
    - IDOR (Insecure Direct Object References)
    - Privilege escalation
    - Forced browsing
 
-6. ✅ **Security Misconfiguration**
+6.  **Security Misconfiguration**
    - Default credentials
    - Debug mode enabled
    - Missing security headers
    - Directory listing
 
-7. ✅ **Cross-Site Scripting (XSS)**
+7.  **Cross-Site Scripting (XSS)**
    - Reflected XSS
    - Stored XSS
    - DOM-based XSS
 
-8. ✅ **Insecure Deserialization**
+8.  **Insecure Deserialization**
    - Object injection
    - Deserialization attacks
 
-9. ✅ **Using Components with Known Vulnerabilities**
+9.  **Using Components with Known Vulnerabilities**
    - Outdated libraries
    - CVE detection
 
-10. ✅ **Insufficient Logging & Monitoring**
+10.  **Insufficient Logging & Monitoring**
     - Error message analysis
     - Security event logging
 
-## 🛡️ Safety & Legal
+##  Safety & Legal
 
-### ⚠️ CRITICAL WARNING
+###  CRITICAL WARNING
 
 **This tool is for AUTHORIZED TESTING ONLY.**
 
-- ❌ **DO NOT** scan targets without explicit written permission
-- ❌ **DO NOT** use for unauthorized testing or malicious purposes
-- ⚠️ Unauthorized penetration testing is **ILLEGAL** in most jurisdictions
-- 📋 Always maintain proper authorization documentation
+-  **DO NOT** scan targets without explicit written permission
+-  **DO NOT** use for unauthorized testing or malicious purposes
+-  Unauthorized penetration testing is **ILLEGAL** in most jurisdictions
+-  Always maintain proper authorization documentation
 
 ### Built-in Safety Features
 
@@ -365,7 +346,7 @@ global_whitelist:
   - "127.0.0.1"
 ```
 
-## 🎯 Use Cases
+##  Use Cases
 
 1. **Regular Security Audits**
    - Schedule periodic scans
@@ -392,7 +373,7 @@ global_whitelist:
    - Industry standards
    - Regulatory requirements
 
-## 🤝 Contributing
+##  Contributing
 
 Contributions are welcome! Please:
 
@@ -402,13 +383,8 @@ Contributions are welcome! Please:
 4. Add tests
 5. Submit a pull request
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
-## 📝 License
-
-MIT License - See [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - OWASP for security testing guidelines
 - LangChain/LangGraph for agent framework
@@ -429,21 +405,16 @@ MIT License - See [LICENSE](LICENSE) file for details.
 - [ ] Collaborative features
 - [ ] Cloud deployment options
 
-## 📞 Support
 
-- 📖 Check the [User Guide](USER_GUIDE.md)
-- 🐛 [Report issues](https://github.com/yourusername/brok/issues)
-- 💬 [Discussions](https://github.com/yourusername/brok/discussions)
-- 📧 Email: support@example.com
 
-## ⭐ Show Your Support
+## Show Your Support
 
 If you find Brok useful, please consider:
-- ⭐ Starring the repository
-- 🐛 Reporting bugs
-- 💡 Suggesting features
-- 📝 Contributing code
-- 📢 Sharing with others
+-  Starring the repository
+-  Reporting bugs
+-  Suggesting features
+-  Contributing code
+-  Sharing with others
 
 ---
 
