@@ -299,14 +299,7 @@ brok/
    - Audit trail maintained
    - Evidence preservation
 
-Read [SECURITY.md](SECURITY.md) for complete guidelines.
 
-## 📚 Documentation
-
-- **[Installation Guide](INSTALL.md)** - Detailed setup instructions
-- **[User Guide](USER_GUIDE.md)** - Complete usage documentation
-- **[Security Guidelines](SECURITY.md)** - Legal and safety information
-- **[API Documentation](docs/API.md)** - REST API reference
 
 ## 🔧 Configuration
 
